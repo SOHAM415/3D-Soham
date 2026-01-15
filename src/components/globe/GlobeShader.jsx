@@ -437,7 +437,7 @@ heatMaterialRef.current.uniforms.heatmap.value =
      FETCH ECLIPSE DATA
   ========================= */
   useEffect(() => {
-    fetch("http://localhost:5000/api/eclipses")
+    fetch("https://threed-soham-2.onrender.com/api/eclipses")
       .then(res => res.json())
       .then(data => setEclipses(data))
       .catch(console.error);

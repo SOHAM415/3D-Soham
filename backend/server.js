@@ -3,7 +3,7 @@ import cors from "cors";
 import eclipsesRoute from "./routes/eclipses.js";
 
 const app = express();
-const PORT = 5000;
+
 
 app.use(cors());
 app.use(express.json());
@@ -14,7 +14,9 @@ app.get("/", (req, res) => {
 
 app.use("/api/eclipses", eclipsesRoute);
 
+const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, () => {
-  console.log(`Backend running on http://localhost:${PORT}`);
+  console.log(`Backend running on port ${PORT}`);
 });
 
